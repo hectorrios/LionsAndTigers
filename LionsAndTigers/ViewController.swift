@@ -20,7 +20,9 @@ class ViewController: UIViewController {
     var myTigers:[Tiger] = []
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         var myTiger = Tiger()
         myTiger.name = "Tigger"
@@ -71,10 +73,22 @@ class ViewController: UIViewController {
         
         let tiger = myTigers[randomIndex]
         
-        myImageView.image = tiger.image
-        nameLabel.text = tiger.name
-        ageLabel.text = "\(tiger.age)"
-        breedLabel.text = tiger.breed
+//        myImageView.image = tiger.image
+//        nameLabel.text = tiger.name
+//        ageLabel.text = "\(tiger.age)"
+//        breedLabel.text = tiger.breed
+        
+        UIView.transitionWithView(self.view, duration: 2,
+            options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {
+                
+                self.myImageView.image = tiger.image
+                self.nameLabel.text = tiger.name
+                self.ageLabel.text = "\(tiger.age)"
+                self.breedLabel.text = tiger.breed
+                
+            }, completion: {
+                (finished: Bool) -> () in
+        })
 
     }
 }

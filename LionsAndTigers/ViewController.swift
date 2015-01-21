@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         myTiger.image = UIImage(named: "BengalTiger.jpg")
     
         myTiger.chuffANumberOfTimes(5)
+        myTiger.chuffANumberOfTimes(4, isLoud: false)
         
         println("My Tiger's name is: \(myTiger.name), it's age is \(myTiger.age), it's breed is \(myTiger.breed) and its image is \(myTiger.image)")
         
